@@ -1,0 +1,109 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Josefin Slab", serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(22, 22, 22, 0.4)),
+    url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.quote-container {
+  width: auto;
+  max-width: 900px;
+  padding: 30px 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  text-align: center;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/*size for long quote */
+.long-quote {
+  font-size: 24px;
+}
+
+.quote-author {
+  color: #2e4530;
+  font-weight: 700;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #6f8361;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 3px rgba(121, 121, 121, 0.6);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #6f8361;
+  color: #ffffff;
+}
+
+.btn:active {
+  background-color: #17281b;
+  transform: translateY(3px);
+  box-shadow: 0 0 rgba(121, 121, 121, 0.4);
+}
+
+.btn-twitter {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.btn-newquote {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.loader {
+  border: 10px solid #6f8361;
+  border-radius: 50%;
+  border-top: 10px solid #f3f3f3;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
