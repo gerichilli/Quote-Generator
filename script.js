@@ -4,11 +4,13 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuotesBtn = document.getElementById('new-quote');
 const loader = document.querySelector('.loader');
+const alertMessage = document.querySelector('.alert');
 
 // Showloading
 function showLoadingSpinner() {
     loader.hidden = false;
     quoteContainer.hidden = true;
+    
 }
 
 // Hide loading
@@ -16,6 +18,7 @@ function removeLoadingSpinner() {
     if(!loader.hidden) {
         quoteContainer.hidden = false;
         loader.hidden = true;
+        alertMessage.hidden = true;
     }
 }
 // Get Quote From API
@@ -36,7 +39,6 @@ async function getQuote() {
         
         // Reduce font size for long quote
         if (data.quoteText.length > 120) {
-            console.log('long');
             quoteText.classList.add('long-quote');
         } else {
             quoteText.classList.remove('long-quote');
@@ -48,8 +50,9 @@ async function getQuote() {
         removeLoadingSpinner();
         throw new Error('oops')
     } catch (error) {
-        console.log(error);
-        getQuote();
+        alertMessage.hidden = false;
+        alertMessage.innerText = `Something went wrong: ${error}`;
+        removeLoadingSpinner();
     }
 }
 

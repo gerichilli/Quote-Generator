@@ -107,3 +107,8 @@ button {
     transform: rotate(360deg);
   }
 }
+
+.alert {
+  color: #ffffff;
+  font-size: 20px;
+}
